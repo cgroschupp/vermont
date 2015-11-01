@@ -1,0 +1,4 @@
+language: cpp
+before_install:
+  - if [ $TRAVIS_OS_NAME == linux ]; then sudo apt-get update && sudo apt-get install -y cmake libboost-filesystem-dev libboost-regex-dev libboost-test-dev libboost-thread-dev libxml2-dev libpcap-dev libsctp-dev libhiredis-dev; fi
+script: cmake -D SUPPORT_REDIS=ON . && make
